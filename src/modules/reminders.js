@@ -47,7 +47,7 @@ class RemindersModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai list reminders",
+            sample: "list reminders",
             description: "Lists all active reminders.",
             permission: null,
             global: false,
@@ -62,7 +62,7 @@ class RemindersModule extends ModuleBase
                 
                 return [parseInt(message.content.substr("remove reminder".length + 1).trim())];
             },
-            sample: "sempai remove reminder __*id*__",
+            sample: "remove reminder __*id*__",
             description: "Removes a reminder.",
             permission: "MANAGE_REMINDERS",
             global: false,
@@ -115,7 +115,7 @@ class RemindersModule extends ModuleBase
                 
                 return [name, msg, date.ret];
             },
-            sample: "sempai remind __*name*__  to __*reminder message*__  at __*time*__",
+            sample: "remind __*name*__  to __*reminder message*__  at __*time*__",
             description: "Send yourself (or someone else) a reminder at a specified time! Use \"me\" to refer to yourself. The timezone is set to the timezone of your discord server.",
             permission: null,
             global: false,
@@ -130,7 +130,7 @@ class RemindersModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai clear reminders",
+            sample: "clear reminders",
             description: "Clears all the reminders for this server.",
             permission: "MANAGE_REMINDERS",
             global: false,

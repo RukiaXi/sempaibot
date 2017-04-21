@@ -31,8 +31,8 @@ class AdminModule extends ModuleBase
                 
                 return [];
             },
-            sample: "sempai show statistics",
-            description: "Shows statistics for sempai server-wide.",
+            sample: "show statistics",
+            description: "Shows statistics for server-wide.",
             permission: "SUPERADMIN",
             global: true,
             
@@ -46,8 +46,8 @@ class AdminModule extends ModuleBase
                 
                 return [];
             },
-            sample: "sempai list servers",
-            description: "Lists all the servers sempai is currently running on.",
+            sample: "list servers",
+            description: "Lists all the servers is currently running on.",
             permission: "SUPERADMIN",
             global: true,
             
@@ -61,7 +61,7 @@ class AdminModule extends ModuleBase
                 
                 return [parseInt(message.content.split(" ")[2])];
             },
-            sample: "sempai blacklist server __*server*__",
+            sample: "blacklist server __*server*__",
             description: "Blacklists a server.",
             permission: "SUPERADMIN",
             global: true,
@@ -76,7 +76,7 @@ class AdminModule extends ModuleBase
                 
                 return [parseInt(message.content.split(" ")[2])];
             },
-            sample: "sempai whitelist server __*server*__",
+            sample: "whitelist server __*server*__",
             description: "Whitelists a server.",
             permission: "SUPERADMIN",
             global: true,
@@ -105,7 +105,7 @@ class AdminModule extends ModuleBase
                 
                 return [user.id];
             },
-            sample: "sempai blacklist user __*@user*__",
+            sample: "blacklist user __*@user*__",
             description: "Blacklists an user.",
             permission: "SUPERADMIN",
             global: true,
@@ -134,7 +134,7 @@ class AdminModule extends ModuleBase
                 
                 return [user.id];
             },
-            sample: "sempai whitelist user __*@user*__",
+            sample: "whitelist user __*@user*__",
             description: "Whitelists an user.",
             permission: "SUPERADMIN",
             global: true,
@@ -149,7 +149,7 @@ class AdminModule extends ModuleBase
                 
                 return [];
             },
-            sample: "sempai show user blacklist",
+            sample: "show user blacklist",
             description: "Displays the user blacklist",
             permission: "SUPERADMIN",
             global: true,
@@ -164,7 +164,7 @@ class AdminModule extends ModuleBase
                 
                 return [];
             },
-            sample: "sempai show server blacklist",
+            sample: "show server blacklist",
             description: "Displays the server blacklist",
             permission: "SUPERADMIN",
             global: true,
@@ -188,7 +188,7 @@ class AdminModule extends ModuleBase
                 
                 return [mod];
             },
-            sample: "sempai enable __*module name*__",
+            sample: "enable __*module name*__",
             description: "Enables a module for this server.",
             permission: "MANAGE_MODULES",
             global: false,
@@ -212,7 +212,7 @@ class AdminModule extends ModuleBase
                 
                 return [mod];
             },
-            sample: "sempai disable __*module name*__",
+            sample: "disable __*module name*__",
             description: "Disables the specified module for this server.",
             permission: "MANAGE_MODULES",
             global: false,
@@ -266,7 +266,7 @@ class AdminModule extends ModuleBase
                 
                 return [role.toLowerCase(), user.id.toLowerCase()];
             },
-            sample: "sempai assign __*role*__ to __*@user*__",
+            sample: "assign __*role*__ to __*@user*__",
             description: "Assigns the specified role to the specified user.",
             permission: "ASSIGN_ROLES",
             global: false,
@@ -313,7 +313,7 @@ class AdminModule extends ModuleBase
                 
                 return [permission.toUpperCase(), role.toLowerCase()];
             },
-            sample: "sempai add __*permission*__ to __*role*__",
+            sample: "add __*permission*__ to __*role*__",
             description: "Adds the specified permission to the specified role.",
             permission: "MANAGE_PERMISSIONS",
             global: false,
@@ -359,7 +359,7 @@ class AdminModule extends ModuleBase
                 
                 return [permission.toUpperCase(), role.toLowerCase()];
             },
-            sample: "sempai remove __*permission*__ from __*role*__",
+            sample: "remove __*permission*__ from __*role*__",
             description: "Removes the specified permission from the specified role.",
             permission: "MANAGE_PERMISSIONS",
             global: false,
@@ -375,7 +375,7 @@ class AdminModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai list modules",
+            sample: "list modules",
             description: "Lists all available modules.",
             permission: "MANAGE_MODULES",
             global: false,
@@ -404,7 +404,7 @@ class AdminModule extends ModuleBase
                 
                 return [user.id];
             },
-            sample: "sempai ignore __*@user*__",
+            sample: "ignore __*@user*__",
             description: "Ignores the specified user.",
             permission: "IGNORE_USERS",
             global: false,
@@ -433,7 +433,7 @@ class AdminModule extends ModuleBase
                 
                 return [user.id];
             },
-            sample: "sempai unignore __*@user*__",
+            sample: "unignore __*@user*__",
             description: "Stops ignoring the specified user.",
             permission: "IGNORE_USERS",
             global: false,
@@ -462,8 +462,8 @@ class AdminModule extends ModuleBase
                 
                 return [channel.id];
             },
-            sample: "sempai go to __*#channel*__",
-            description: "Tells Sempai to output to the specified channel.",
+            sample: "go to __*#channel*__",
+            description: "Tells to output to the specified channel.",
             permission: "GO_TO_CHANNEL",
             global: false,
             

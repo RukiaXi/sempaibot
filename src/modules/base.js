@@ -5,6 +5,7 @@ const permissions = require("../permissions.js");
 const ModuleBase = require("../modulebase.js");
 const users = require("../users.js");
 const Util = require("../util.js");
+const config = require("../../config.js");
 const moment = require("moment-timezone");
 
 class BaseModule extends ModuleBase
@@ -82,7 +83,7 @@ class BaseModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai what is my role?",
+            sample: "what is my role?",
             description: "Displays your role.",
             permission: null,
             global: false,
@@ -102,7 +103,7 @@ class BaseModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai what are my permissions?",
+            sample: "what are my permissions?",
             description: "Displays your role's permissions.",
             permission: null,
             global: false,
@@ -117,7 +118,7 @@ class BaseModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai list roles",
+            sample: "list roles",
             description: "Lists every user's role.",
             permission: null,
             global: false,
@@ -132,7 +133,7 @@ class BaseModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai list permissions",
+            sample: "list permissions",
             description: "Lists the available permissions for each role.",
             permission: null,
             global: false,
@@ -149,7 +150,7 @@ class BaseModule extends ModuleBase
                     
                 return [];
             },
-            sample: "sempai show ignore list",
+            sample: "show ignore list",
             description: "Shows the list of people I'm currently ignoring!",
             permission: null,
             global: false,
@@ -171,7 +172,7 @@ class BaseModule extends ModuleBase
                 
                 return [area.toLowerCase()];
             },
-            sample: "sempai list timezones __*area*__",
+            sample: "list timezones __*area*__",
             description: "Lists all the timezones",
             permission: null,
             global: false,
@@ -293,6 +294,8 @@ class BaseModule extends ModuleBase
         let message_queue = [];
         let role = message.user.get_role(message.server);
         let modules = "";
+        let listen = config.listen_to + config.listen_to_seperator;
+
         for(let key in this.bot.modules)
         {
             let module = this.bot.modules[key];
@@ -325,7 +328,7 @@ class BaseModule extends ModuleBase
 
                     hasNonHidden = true;
 
-                    tmp += "**" + module.commands[i].sample + "** - " + module.commands[i].description;
+                    tmp += "**" + listen + module.commands[i].sample + "** - " + module.commands[i].description;
                     tmp += "\r\n";
                 }
             }

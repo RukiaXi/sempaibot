@@ -515,13 +515,10 @@ class Bot {
             }
         }
 
-        if (message.content.toLowerCase().indexOf("sempai") === 0 || message.content.indexOf("-") === 0) {
-            var msg = message.content;
-            if (msg.toLowerCase().indexOf("sempai") === 0) {
-                msg = msg.substr("sempai".length + 1).replace(/\s+/g, " ").trim();
-            } else {
-                msg = msg.substr(1).replace(/\s+/g, " ").trim();
-            }
+        let listen = config.listen_to + config.listen_to_seperator;
+
+        if (message.content.toLowerCase().indexOf(listen) === 0) {
+            var msg = message.content.substr(listen.length).replace(/\s+/g, " ").trim();
 
             message.content = msg;
             var split = message.content.split(" ");
