@@ -252,6 +252,29 @@ class Bot {
         });
     }
 
+    respond_embed(m, message) {
+        if (this.is_server_blacklisted(m.server.id)) {
+            return Promise.reject("blacklisted");
+        }
+
+        let actual_channel = m.channel;
+
+        return new Promise((resolve, reject) => {
+            let queue = () => this.queue.push(() => actual_channel.sendEmbed(message).then(() => resolve(message)).catch(err => reject(err)));
+
+            if (!this.connected) {
+                queue();
+                return;
+            }
+
+            actual_channel.sendEmbed(message).then(() => resolve(message)).catch((err) => {
+                console.log(err);
+                this.connected = false;
+                queue();
+            });
+        });
+    }
+
     respond_queue(message, messages) {
         return new Promise((resolve, reject) => {
             let send = (index, send) => {

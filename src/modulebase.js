@@ -9,6 +9,8 @@ class ModuleBase
         this.name = "";
         this.always_on = false;
         this.commands = [];
+        this.bot = null;
+        this.servers = [];
     }
 
     add_command(command)
